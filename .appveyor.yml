@@ -8,10 +8,10 @@ init:
   - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%"
 
 install:
-  - "%PYTHON%/Scripts/pip.exe install cython"
+  - "pip install cython"
   
 build_script:
-  - "%CMD_IN_ENV% python setup.py build --noversioncheck --export"
+  - "python setup.py build --noversioncheck --export"
   
 deploy:
   release: animation_nodev-v$(appveyor_build_version)
