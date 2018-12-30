@@ -10,15 +10,14 @@ init:
   - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%"
 
 install:
-#   - "%PYTHON%/Scripts/pip install cython"
+  - "%PYTHON%/Scripts/pip install cython"
   
 build_script:
-#   - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
-#   - "%PYTHON%/python setup.py build --noversioncheck --export"
-  - pwd
+  - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+  - "%PYTHON%/python setup.py build --noversioncheck --export"
 
 artifacts:
-  - path: animation_nodev*.zip
+  - path: animation_nodes_v2_1_windows_py37.zip
     name: Addon
 
 deploy:
