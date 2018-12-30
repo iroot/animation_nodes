@@ -17,11 +17,15 @@ build_script:
 #   - "%PYTHON%/python setup.py build --noversioncheck --export"
   - echo "Hello, World!" > test.txt
 
+artifacts:
+  - path: test.txt
+    name: MyApp
+
 deploy:
   release: animation_nodev-v$(appveyor_build_version)
   provider: GitHub
   auth_token:
     secure: iRwbV7ucqc0dNOl9YggUxHPiyExldd8hKWiO5jwqgoZarFo4adIf060kSe7iVnC4
-  artifact: test.txt
+  artifact: MyApp
   draft: true
   prerelease: false
