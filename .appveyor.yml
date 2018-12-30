@@ -1,6 +1,6 @@
 environment:
   matrix:
-    - PYTHON: "C:\\Python37-x64"
+    - PYTHON: "C:/Python37-x64"
       PYTHON_VERSION: 3.7.0
       PYTHON_ARCH: 64
 
@@ -8,10 +8,10 @@ init:
   - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%"
 
 install:
-  - "pip install cython"
+  - "%PYTHON%/Scripts/pip install cython"
   
 build_script:
-  - "python setup.py build --noversioncheck --export"
+  - "%PYTHON%/python setup.py build --noversioncheck --export"
   
 deploy:
   release: animation_nodev-v$(appveyor_build_version)
