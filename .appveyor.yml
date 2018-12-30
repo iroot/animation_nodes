@@ -21,6 +21,6 @@ deploy:
   provider: GitHub
   auth_token:
     secure: iRwbV7ucqc0dNOl9YggUxHPiyExldd8hKWiO5jwqgoZarFo4adIf060kSe7iVnC4
-  artifact: animation_nodes.*\.zip
+  artifact: /animation_nodes.*\.zip/
   draft: true
   prerelease: false
