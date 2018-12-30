@@ -10,17 +10,18 @@ init:
   - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%"
 
 install:
-  - "%PYTHON%/Scripts/pip install cython"
+#   - "%PYTHON%/Scripts/pip install cython"
   
 build_script:
-  - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
-  - "%PYTHON%/python setup.py build --noversioncheck --export"
-  
+#   - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+#   - "%PYTHON%/python setup.py build --noversioncheck --export"
+  - echo "Hello, World!" > test.txt
+
 deploy:
   release: animation_nodev-v$(appveyor_build_version)
   provider: GitHub
   auth_token:
     secure: iRwbV7ucqc0dNOl9YggUxHPiyExldd8hKWiO5jwqgoZarFo4adIf060kSe7iVnC4
-  artifact: /animation_nodes.*\.zip/
+  artifact: test.txt
   draft: true
   prerelease: false
